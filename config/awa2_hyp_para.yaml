@@ -1,0 +1,63 @@
+#### out_data:                                                           # commonly used cross all dataset
+coarse_output_pkl_dir: '/data/code/LPL/coarse_pkl_data'
+save_model_dir: '/data/code/LPL/saved_model'   
+log_dir: '/data/code/LPL/log_lpl'
+
+#### data_attribute:
+dataset_name: 'AWA2'
+classes_num: 50
+attr_num: 85
+
+#### reproduction setting:
+seed: 2022
+device: 'cuda:0'
+
+#### coarse traning:
+pre_trained: True
+FINE_TUNE: True
+ways: 8
+shots: 2
+coarse_epoch_num: 20
+coarse_iter_num:  100 # 100
+coarse_lr: 0.0005
+coarse_momentum: 0.9
+coarse_opt_decay: 0.001
+coarse_step_size: 100
+gamma: 0.5
+DATALOADER_MODE: 'EPISODE'
+image_size: 448
+
+#### fine training:
+VISION_DIM: 2048
+sub_ways: 20
+sub_shots: 4
+fine_epoch_num: 200
+fine_iter_num: 50
+fine_lr: 0.0005
+fine_momentum: 0.9
+fine_opt_decay: 0.001
+fine_step_size: 20000
+init_s2v: 2               #
+temp: 0.2                 # 5.0 #0.2         # sparse_max_temp
+scale_factor: 20.0
+GMIX: GMIX                # GMIX, MIX
+gama: 0.0
+pkl_data: 'V2S_CLS_AWA2_448_11_lr_0.0005_decay_0.001_data.pkl'
+walk_num: 4
+beta1: 5.0
+beta2: 1.0
+random_distribution: 'B'
+
+train_stage: 'Fine'
+key_word: 'transductive'
+JS_Softmax_Temp: 1.0
+INTER: False
+
+
+#### transductive training
+transductive: False
+update_feature: False
+warm_epoch: 60
+epoch_interval: 20
+negative_slope: 1.0
+
