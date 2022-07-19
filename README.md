@@ -1,1 +1,1 @@
-This is implementation of Learning Prototype via Placeholder for Zero-shot Recognition (IJCAI2022).
+Code repository for our paper Learning Prototype via Placeholder for Zero-shot Recognition (IJCAI2022).
